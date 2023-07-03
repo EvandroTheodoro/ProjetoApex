@@ -14,9 +14,6 @@ namespace MeuProjetoApi.Controllers
 
         [HttpGet]
         [Route("pessoa/obterTodos")]
-        [ProducesResponseType(typeof(List<Pessoa>), (int)HttpStatusCode.OK)]
-        [ProducesResponseType(typeof(string), (int)HttpStatusCode.BadRequest)]
-        [ProducesResponseType(typeof(string), (int)HttpStatusCode.InternalServerError)]
         public IActionResult ObterTodos()
         {
             try
@@ -33,10 +30,6 @@ namespace MeuProjetoApi.Controllers
 
         [HttpGet]
         [Route("pessoa/obterPorId/{id}")]
-        [ProducesResponseType(typeof(Pessoa), (int)HttpStatusCode.OK)]
-        [ProducesResponseType(typeof(string), (int)HttpStatusCode.NotFound)]
-        [ProducesResponseType(typeof(string), (int)HttpStatusCode.BadRequest)]
-        [ProducesResponseType(typeof(string), (int)HttpStatusCode.InternalServerError)]
         public IActionResult ObterPorId(int id)
         {
             try
@@ -62,9 +55,6 @@ namespace MeuProjetoApi.Controllers
 
         [HttpPost]
         [Route("pessoa/adicionar")]
-        [ProducesResponseType(typeof(Pessoa), (int)HttpStatusCode.Created)]
-        [ProducesResponseType(typeof(string), (int)HttpStatusCode.BadRequest)]
-        [ProducesResponseType(typeof(string), (int)HttpStatusCode.InternalServerError)]
         public IActionResult Adicionar([FromBody] Pessoa pessoa)
         {
             try
@@ -86,10 +76,6 @@ namespace MeuProjetoApi.Controllers
 
         [HttpPut]
         [Route("pessoa/atualizar")]
-        [ProducesResponseType(typeof(Pessoa), (int)HttpStatusCode.OK)]
-        [ProducesResponseType(typeof(string), (int)HttpStatusCode.NotFound)]
-        [ProducesResponseType(typeof(string), (int)HttpStatusCode.BadRequest)]
-        [ProducesResponseType(typeof(string), (int)HttpStatusCode.InternalServerError)]
         public IActionResult Atualizar([FromBody] Pessoa pessoa)
         {
             try
@@ -122,10 +108,6 @@ namespace MeuProjetoApi.Controllers
 
         [HttpDelete]
         [Route("pessoa/excluir/{id}")] //www.com/pessoa/excluir/1
-        [ProducesResponseType(typeof(Nullable), (int)HttpStatusCode.NoContent)]
-        [ProducesResponseType(typeof(string), (int)HttpStatusCode.NotFound)]
-        [ProducesResponseType(typeof(string), (int)HttpStatusCode.BadRequest)]
-        [ProducesResponseType(typeof(string), (int)HttpStatusCode.InternalServerError)]
         public IActionResult Excluir(int id)
         {
             try

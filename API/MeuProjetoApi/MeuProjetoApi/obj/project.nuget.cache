@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "47sUUqked5bKXwLSFX3pi2DuheShEBux4yRoHPRDM3mXQd9BOrPoysrw0LE8LaJMVbpZRBPUVK78ojYA7nHAWg==",
+  "dgSpecHash": "vUUwGQ/2SNndyeUhZAaUlwkJZAw6llduBxITbPF6sjjfUk1toRKfvNo+zp9iFNT7aK4PqD5sNMTvTBdgedWuzQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Master\\Documents\\Aula\\06 - API .NET e Angular\\API\\MeuProjetoApi\\MeuProjetoApi\\MeuProjetoApi.csproj",
+  "projectFilePath": "C:\\Users\\Master\\Documents\\ProjetoFinalApex\\API\\MeuProjetoApi\\MeuProjetoApi\\ProjetoFinalApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Master\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Master\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

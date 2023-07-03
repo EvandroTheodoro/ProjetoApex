@@ -1,11 +1,14 @@
 ﻿using MeuProjetoApi.Models;
 using Microsoft.EntityFrameworkCore;
+using ProjetoFinalApi.BancoDados.Config;
+using ProjetoFinalApi.Models;
 
 namespace MeuProjetoApi.BancoDados.Contexto
 {
     public class MeuProjetoApiContexto : DbContext
     {
         public DbSet<Pessoa> TabelaPessoas { get; set; }
+        public DbSet<Projetos> TabelaProjetos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -20,6 +23,7 @@ namespace MeuProjetoApi.BancoDados.Contexto
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new Config.PessoaConfig());
+            modelBuilder.ApplyConfiguration(new ProjetosConfig()); 
         }
     }
 }
