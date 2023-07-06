@@ -8,6 +8,6 @@
         public double Potencia { get; set; }
         public int QntBobinas { get; set; }
         public double? ValorProjeto { get; set; }
-    }
+    }       
 }
 

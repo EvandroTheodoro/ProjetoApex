@@ -1,0 +1,47 @@
+
+<div class="container-fluid">
+  <h2 class="centralizar-texto">Listagem de projetos</h2>
+
+  <div class="container-fluid d-flex justify-content-end">
+    <a class="btn btn-success" style="margin-bottom: 10px;" [routerLink]="['/projeto/cadastro']" queryParamsHandling="preserve">Adicionar</a>
+  </div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Ações</th>
+          <th>Id</th>
+          <th>Nome Cliente</th>
+          <th>Tensao</th>
+          <th>Potencia</th>
+          <th>Quantidade de Bobinas</th>
+          <th>Valor Projeto</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let projeto of this.listaProjeto">
+          <td>
+            <!-- Botão de Edição -->
+            <a class="btn btn-primary btn-sm" style="margin-right: 5px;" [routerLink]="['/projeto/cadastro/', projeto.id]">Editar</a>
+
+            <!-- Botão de Exclusão -->
+            <a class="btn btn-danger btn-sm" style="margin-right: 5px;" (click)="this.confirmarEExcluir(projeto.id)">Excluir</a>
+        </td>
+          <td>{{projeto.id}}</td>
+          <td>{{projeto.nomeCliente}}</td>
+          <td>{{projeto.tensao}}</td>
+          <td>{{projeto.potencia}}</td>
+          <td>{{projeto.qntBobinas}}</td>
+          <td>{{projeto.valorProjeto | brlCurrency}}</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+  </div>
+</div>
+
+
+

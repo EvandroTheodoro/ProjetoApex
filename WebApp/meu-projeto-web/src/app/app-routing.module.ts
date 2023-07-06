@@ -4,6 +4,8 @@ import { MenuPrincipalComponent } from './pages/menu-principal/menu-principal.co
 import { BarraSuperiorComponent } from './components/barra-superior/barra-superior.component';
 import { PessoaListagemComponent } from './pages/pessoa-listagem/pessoa-listagem.component';
 import { PessoaCadastroComponent } from './pages/pessoa-cadastro/pessoa-cadastro.component';
+import { ProjetoListagemComponent } from './pages/projeto-listagem/projeto-listagem.component';
+import { ProjetoCadastroComponent } from './pages/projeto-cadastro/projeto-cadastro.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/principal', pathMatch: 'full' },
@@ -18,6 +20,14 @@ const routes: Routes = [
           { path: 'listagem', component: PessoaListagemComponent },
           { path: 'cadastro', component: PessoaCadastroComponent },
           { path: 'cadastro/:id', component: PessoaCadastroComponent },
+        ]
+      },
+      {
+        path: 'projeto',
+        children: [
+          { path: 'listagem', component: ProjetoListagemComponent },
+          { path: 'cadastro', component: ProjetoCadastroComponent },
+          { path: 'cadastro/:id', component: ProjetoCadastroComponent },
         ]
       },
     ]

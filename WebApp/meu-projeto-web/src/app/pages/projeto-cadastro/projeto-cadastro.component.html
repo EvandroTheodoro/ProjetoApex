@@ -1,0 +1,46 @@
+
+<div class="container">
+  <h2 class="centralizar-texto">Cadastro de Projeto</h2>
+
+  <form [formGroup]="this.formulario" (ngSubmit)="this.submeterForm()" novalidate [ngClass]="{'submitted': this.formSubmetido}">
+    <div class="row">
+
+      <div class="form-group col-sm-12 col-md-12 col-lg-6">
+        <label class="form-control-label label-obrigatorio">Nome do Cliente</label>
+        <input type="text" class="form-control" placeholder="Preencha um nome" formControlName="nomeCliente">
+        <validator [formSubmitted]="this.formSubmetido" [errors]="this.formulario?.get('nomeCliente')?.errors"></validator>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-12 col-lg-6">
+        <label class="form-control-label label-obrigatorio">Tensão</label>
+        <input type="number" class="form-control" placeholder="Preencha uma Tensão" formControlName="tensao">
+        <validator [formSubmitted]="this.formSubmetido" [errors]="this.formulario?.get('tensao')?.errors"></validator>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-12 col-lg-6">
+        <label class="form-control-label label-obrigatorio">Potência</label>
+        <input type="text" class="form-control" placeholder="Preencha uma Potência" formControlName="potencia" currencyMask [options]="{ prefix: 'Watts ', thousands: '.', decimal: ',', align: 'left', precision: 0 }">
+        <validator [formSubmitted]="this.formSubmetido" [errors]="this.formulario?.get('potencia')?.errors"></validator>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-12 col-lg-6">
+        <label class="form-control-label label-obrigatorio">Quantidade de Bobinas</label>
+        <input type="number" class="form-control" placeholder="Preencha a quantidade de bobinas" formControlName="qntBobinas">
+        <validator [formSubmitted]="this.formSubmetido" [errors]="this.formulario?.get('qntBobinas')?.errors"></validator>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-12 col-lg-6">
+        <label class="form-control-label">Valor do Projeto</label>
+        <input type="text" class="form-control" placeholder="Preencha o valor do projeto" formControlName="valorProjeto" currencyMask [options]="{ prefix: 'R$', thousands: '.', decimal: ',', align: 'left' }">
+        <validator [formSubmitted]="this.formSubmetido" [errors]="this.formulario?.get('valorProjeto')?.errors"></validator>
+      </div>
+
+      <div class="form-group col-sm-12 action-buttons">
+        <a class="btn btn-secondary float-left" [routerLink]="['/projeto/listagem']" queryParamsHandling="preserve">Voltar</a>
+        <button type="submit" class="btn btn-primary float-right">Salvar</button>
+      </div>
+
+    </div>
+  </form>
+
+</div>

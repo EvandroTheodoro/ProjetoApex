@@ -109,7 +109,7 @@ namespace ProjetoFinalApi.Controllers
         }
 
         [HttpDelete]
-        [Route("projeto/excluir/{id}")] //www.com/pessoa/excluir/1
+        [Route("projeto/excluir/{id}")] 
         public IActionResult Excluir(int id)
         {
             try

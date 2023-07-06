@@ -7,7 +7,7 @@ import { MenuPrincipalComponent } from './pages/menu-principal/menu-principal.co
 import { BarraSuperiorComponent } from './components/barra-superior/barra-superior.component';
 import { PessoaListagemComponent } from './pages/pessoa-listagem/pessoa-listagem.component';
 import { PessoaCadastroComponent } from './pages/pessoa-cadastro/pessoa-cadastro.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,6 +16,21 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgxMaskModule } from 'ngx-mask';
 import { TelefonePipe } from './pipes/telefone.pipe';
 import { CpfPipe } from './pipes/cpf.pipe';
+import { ProjetoListagemComponent } from './pages/projeto-listagem/projeto-listagem.component';
+import { ProjetoCadastroComponent } from './pages/projeto-cadastro/projeto-cadastro.component';
+import { CURRENCY_MASK_CONFIG, CurrencyMaskConfig, CurrencyMaskModule } from "ng2-currency-mask";
+import localePt from '@angular/common/locales/pt';
+import { BrlCurrencyPipe } from './pipes/brl-currency.pipe';
+
+export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
+  align: "left",
+  allowNegative: true,
+  decimal: ",",
+  precision: 2,
+  prefix: "R$ ",
+  suffix: "",
+  thousands: "."
+};
 
 @NgModule({
   declarations: [
@@ -26,7 +41,10 @@ import { CpfPipe } from './pipes/cpf.pipe';
     PessoaCadastroComponent,
     ValidatorComponent,
     CpfPipe,
-    TelefonePipe
+    TelefonePipe,
+    ProjetoListagemComponent,
+    ProjetoCadastroComponent,
+    BrlCurrencyPipe
   ],
   imports: [
     BrowserModule,
@@ -39,8 +57,13 @@ import { CpfPipe } from './pipes/cpf.pipe';
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     NgxMaskModule.forRoot(),
+    CurrencyMaskModule
   ],
-  providers: [],
+  providers: [
+    { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+registerLocaleData(localePt);
